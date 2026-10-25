@@ -1,0 +1,10 @@
+
+{
+  "values": [
+    {
+      "id": "additionalarrows:blow_up_arrow",
+      "action": "ADD_AFTER",
+      "target": "minecraft:arrow"
+    }
+  ]
+}

@@ -1,5 +1,8 @@
 package ru.rootpoint.additionalarrows.blowUp;
 
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.server.level.ServerEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.LivingEntity;
@@ -24,7 +27,10 @@ public class BlowUpArrowEntity extends AbstractArrow {
     public BlowUpArrowEntity(final Level level, final LivingEntity owner, final ItemStack pickupItemStack, final @Nullable ItemStack firedFromWeapon) {
         super(EntityTypes.ARROW, owner, level, pickupItemStack, firedFromWeapon);
     }
-
+    @Override
+    public @NonNull Packet<ClientGamePacketListener> getAddEntityPacket(@NonNull ServerEntity serverEntity) {
+        return super.getAddEntityPacket(serverEntity);
+    }
     @Override
     public void onHitEntity(final @NonNull EntityHitResult hitResult) {
         var pos = hitResult.getLocation();

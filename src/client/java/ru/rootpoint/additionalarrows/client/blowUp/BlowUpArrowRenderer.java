@@ -16,7 +16,7 @@ public class BlowUpArrowRenderer extends ArrowRenderer<BlowUpArrowEntity, ArrowR
 
     @Override
     public @NonNull Identifier getTextureLocation(@NonNull ArrowRenderState state) {
-        return Identifier.withDefaultNamespace("textures/entity/projectiles/arrow.png");
+        return Identifier.fromNamespaceAndPath("additionalarrows", "entity/projectiles/blow_up_arrow");
     }
 
     @Override

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "minecraft:arrow",
+    "T": "minecraft:tnt"
+  },
+  "pattern": [
+    "T",
+    "A"
+  ],
+  "result": {
+    "count": 2,
+    "id": "additionalarrows:blow_up_arrow"
+  }
+}
