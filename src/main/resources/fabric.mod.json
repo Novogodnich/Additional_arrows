@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "additionalarrows",
+  "version": "${version}",
+  "name": "AdditionalArrows",
+  "description": "The mods, which adds more arrows",
+  "authors": [],
+  "contact": {},
+  "license": "GPL-3.0",
+  "icon": "assets/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "ru.rootpoint.additionalarrows.client.AdditionalarrowsDataGenerator"
+    ],
+    "client": [
+      "ru.rootpoint.additionalarrows.client.AdditionalarrowsClient"
+    ],
+    "main": [
+      "ru.rootpoint.additionalarrows.Additionalarrows"
+    ]
+  },
+  "mixins": [
+    "additionalarrows.mixins.json",
+    {
+      "config": "additionalarrows.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
