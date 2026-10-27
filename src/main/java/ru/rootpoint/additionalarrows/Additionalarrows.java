@@ -19,17 +19,14 @@ public class Additionalarrows implements ModInitializer {
 
     public static final Identifier BLOW_UP_ARROW_ID = Identifier.fromNamespaceAndPath(MOD_ID, "blow_up_arrow");
 
-    // 1. Создаем ResourceKey для предмета заранее, чтобы использовать его везде
     public static final ResourceKey<Item> BLOW_UP_ARROW_ITEM_KEY = ResourceKey.create(Registries.ITEM, BLOW_UP_ARROW_ID);
 
-    // 2. Регистрируем предмет, ОБЯЗАТЕЛЬНО передавая созданный ResourceKey в setId()
     public static final Item BLOW_UP_ARROW_ITEM = Registry.register(
             BuiltInRegistries.ITEM,
             BLOW_UP_ARROW_ITEM_KEY,
             new BlowUpArrowItem(new Item.Properties().setId(BLOW_UP_ARROW_ITEM_KEY))
     );
 
-    // 3. Регистрируем сущность ниже предмета
     public static final EntityType<BlowUpArrowEntity> BLOW_UP_ARROW_ENTITY = Registry.register(
             BuiltInRegistries.ENTITY_TYPE,
             BLOW_UP_ARROW_ID,
