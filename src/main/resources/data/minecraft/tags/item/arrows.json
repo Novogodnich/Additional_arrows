@@ -4,6 +4,11 @@
       "id": "additionalarrows:blow_up_arrow",
       "action": "ADD_AFTER",
       "target": "minecraft:arrow"
+    },
+    {
+      "id": "additionalarrows:electric_arrow",
+      "action": "ADD_AFTER",
+      "target": "additionalarrows:blow_up_arrow"
     }
   ]
 }

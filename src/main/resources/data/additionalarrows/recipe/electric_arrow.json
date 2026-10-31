@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "minecraft:arrow",
+    "T": "minecraft:lightning_rod"
+  },
+  "pattern": [
+    "T",
+    "A"
+  ],
+  "result": {
+    "count": 1,
+    "id": "additionalarrows:electric_arrow"
+  }
+}

@@ -13,6 +13,8 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import ru.rootpoint.additionalarrows.blowUp.BlowUpArrowEntity;
 import ru.rootpoint.additionalarrows.blowUp.BlowUpArrowItem;
+import ru.rootpoint.additionalarrows.electric.ElectricArrowEntity;
+import ru.rootpoint.additionalarrows.electric.ElectricArrowItem;
 
 public class Additionalarrows implements ModInitializer {
     public static final String MOD_ID = "additionalarrows";
@@ -37,12 +39,36 @@ public class Additionalarrows implements ModInitializer {
                     .build(ResourceKey.create(Registries.ENTITY_TYPE, BLOW_UP_ARROW_ID))
     );
 
+    public static final Identifier ELECTRIC_ARROW_ID = Identifier.fromNamespaceAndPath(MOD_ID, "electric_arrow");
+
+    public static final ResourceKey<Item> ELECTRIC_ARROW_ITEM_KEY = ResourceKey.create(Registries.ITEM, ELECTRIC_ARROW_ID);
+
+    public static final Item ELECTRIC_ARROW_ITEM = Registry.register(
+            BuiltInRegistries.ITEM,
+            ELECTRIC_ARROW_ITEM_KEY,
+            new ElectricArrowItem(new Item.Properties().setId(ELECTRIC_ARROW_ITEM_KEY))
+    );
+
+    public static final EntityType<ElectricArrowEntity> ELECTRIC_ARROW_ENTITY = Registry.register(
+            BuiltInRegistries.ENTITY_TYPE,
+            ELECTRIC_ARROW_ID,
+            EntityType.Builder.<ElectricArrowEntity>of(ElectricArrowEntity::new, MobCategory.MISC)
+                    .sized(0.5F, 0.5F)
+                    .clientTrackingRange(4)
+                    .updateInterval(20)
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, ELECTRIC_ARROW_ID))
+    );
+
     @Override
     public void onInitialize() {
         BlowUpArrowItem.entityTypeSupplier = () -> BLOW_UP_ARROW_ENTITY;
         BlowUpArrowEntity.itemSupplier = () -> BLOW_UP_ARROW_ITEM;
 
+        ElectricArrowItem.entityTypeSupplier = () -> ELECTRIC_ARROW_ENTITY;
+        ElectricArrowEntity.itemSupplier = () -> ELECTRIC_ARROW_ITEM;
+
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COMBAT).register(content -> content.accept(BLOW_UP_ARROW_ITEM));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COMBAT).register(content -> content.accept(ELECTRIC_ARROW_ITEM));
     }
 }
 
