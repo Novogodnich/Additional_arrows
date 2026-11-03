@@ -8,24 +8,27 @@ This mod is currently focused on **arrows**. Custom bows and other related items
 
 ### Current Features
 
-- Custom textures for each additional arrow
-- Explosive arrow that blows up on impact
+*   Custom textures for each additional arrow
+*   Explosive arrow that blows up on impact
+*   Lightning arrow that strikes the target with lightning
 
 ### Planned Features
 
-- Lightning arrow that strikes the target with lightning
+*   Lava arrow which adds lava to the target blocks
 
 ## Crafting
 
-Currently, this mod adds only **one additional arrow**, which is still in development.
+Craft receipe of `blow up arrow`:
 
-Here is its crafting recipe of `blow up arrow`:
+2B: TNT
 
-|       | A | B     | C |
-| ----- | - | ----- | - |
-| **1** |   |       |   |
-| **2** |   | TNT   |   |
-| **3** |   | Arrow |   |
+3B: Arrow
+
+Craft receipe of `electric arrow`:
+
+2B: Lighting Rod
+
+3B: Arrow
 
 ## Servers
 
